@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "630543795549",
+    "project_id": "solexpresspy-kiero",
+    "storage_bucket": "solexpresspy-kiero.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630543795549:android:2122ae1e605d439ff5d4b4",
+        "android_client_info": {
+          "package_name": "com.solexpresspy.kiero"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4yNoqrkKfua6MlKJnje8l_xRF7AUfywc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
