@@ -2,30 +2,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
-import 'package:kiero/controller/customcontroller.dart';
+import 'package:kiero/utils/appconstant.dart';
 
-import '../../utils/appconstant.dart';
+import '../../controller/on_sale_controller.dart';
+import '../../utils/message.dart';
 import '../common/common_screen.dart';
 
-class CustomScreen extends CommonScreen {
-  late CustomController model;
-
-
-
-  CustomScreen({
-    super.url,
-    super.title,
-    }
-  );
+class OnSaleScreen extends CommonScreen {
+  late OnSaleController model;
+  OnSaleScreen({super.url,super.title}
+  ){
+    super.url = onSaleUrl ;
+    super.title = Message.ON_SALES;
+  }
 
   @override
   void setControllerModel() {
-    model =  Get.put(CustomController());
+    model = Get.put(OnSaleController());
   }
 
   @override
   void setPageIndex() {
-    pageIndex = PAGE_CUSTOM;
+    pageIndex = PAGE_ON_SALE;
   }
   @override
   void getDarkMode() {

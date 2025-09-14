@@ -1,32 +1,33 @@
 
-import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_inappwebview/src/in_app_webview/in_app_webview_controller.dart';
+import 'package:flutter_inappwebview/src/pull_to_refresh/pull_to_refresh_controller.dart';
 import 'package:get/get.dart';
-import 'package:kiero/controller/customcontroller.dart';
+import 'package:kiero/utils/appconstant.dart';
 
-import '../../utils/appconstant.dart';
+import '../../controller/about_us_controller.dart';
+import '../../utils/message.dart';
 import '../common/common_screen.dart';
 
-class CustomScreen extends CommonScreen {
-  late CustomController model;
+class AboutUsScreen extends CommonScreen {
+  late AboutUsController model ;
 
-
-
-  CustomScreen({
-    super.url,
-    super.title,
-    }
-  );
+  AboutUsScreen({super.url,super.title}
+  ){
+    super.url = aboutUsUrl ;
+    super.title = Message.ABOUT_US;
+  }
 
   @override
   void setControllerModel() {
-    model =  Get.put(CustomController());
+    model = Get.put(AboutUsController());
   }
 
   @override
   void setPageIndex() {
-    pageIndex = PAGE_CUSTOM;
+    pageIndex = PAGE_ABOUT_US;
   }
+
   @override
   void getDarkMode() {
     model.getDarkMode();

@@ -1,16 +1,13 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:kiero/controller/controller_model.dart';
-import 'package:kiero/view/demoscreen/demoscreen.dart';
 
 
-class MainController extends ControllerModel {
-  InAppWebViewController? webViewController;
-  late PullToRefreshController pullToRefreshController;
 
-
+class ShoppingCartController extends ControllerModel {
 
   @override
   Future<void> onInit() async {
@@ -31,11 +28,10 @@ class MainController extends ControllerModel {
     }
     super.onInit();
   }
-
-  void onDemoScreenClicked() {
-    Get.to(DemoScreen(), transition: Transition.leftToRight);
+  @override
+  Future<void> onWillPop(BuildContext context) async {
+    Get.back();
   }
-
 
 
 }

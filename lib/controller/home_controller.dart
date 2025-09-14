@@ -1,11 +1,13 @@
-
 import 'dart:io';
 
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:kiero/controller/controller_model.dart';
 
-class CustomController extends ControllerModel {
+
+
+class HomeController extends ControllerModel {
+
+
   @override
   Future<void> onInit() async {
     getDarkMode();
@@ -21,14 +23,9 @@ class CustomController extends ControllerModel {
         },
       );
     } on Exception catch (e) {
-      print(e);
+       print(e);
     }
     super.onInit();
   }
 
-  @override
-  Future<void> onItemTapped(BuildContext context, int index) {
-    // TODO: implement onItemTapped
-    throw UnimplementedError();
-  }
 }

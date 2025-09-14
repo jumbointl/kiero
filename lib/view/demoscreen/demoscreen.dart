@@ -18,18 +18,18 @@ class DemoScreen extends StatelessWidget {
       },
       child: Obx(
         () => Scaffold(
-          backgroundColor: model.isDark.isTrue ? Colors.black : Colors.white,
+          backgroundColor: model.isDark.value ? Colors.black : Colors.white,
           appBar: AppBar(backgroundColor:
-          model.isDark.isTrue ? Colors.black : Colors.white,
+          model.isDark.value ? Colors.black : Colors.white,
             title: Text(
               "Demo Screen",
               style: TextStyle(
                   color:
-                  model.isDark.isFalse ? Colors.black : Colors.white),
+                  !model.isDark.value ? Colors.black : Colors.white),
             ),
             iconTheme: IconThemeData(
                 color:
-                model.isDark.isFalse ? Colors.black : Colors.white),
+                !model.isDark.value ? Colors.black : Colors.white),
           ),
           bottomNavigationBar: !enableBannerAds
               ? const SizedBox.shrink()
@@ -49,7 +49,7 @@ class DemoScreen extends StatelessWidget {
                   TextFormField(
                     controller: model.customUrl,
                     keyboardType: TextInputType.url,
-                    style: TextStyle(color: model.isDark.isFalse ? Colors.black : Colors.white),
+                    style: TextStyle(color: !model.isDark.value ? Colors.black : Colors.white),
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Demo Url can't be empty";
@@ -58,7 +58,7 @@ class DemoScreen extends StatelessWidget {
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter website url',
-                      hintStyle: TextStyle(color: model.isDark.isFalse ? Colors.black : Colors.white),
+                      hintStyle: TextStyle(color: !model.isDark.value ? Colors.black : Colors.white),
                       filled: true,
                       fillColor: Colors.black12,
                       focusedBorder: const OutlineInputBorder(
@@ -99,7 +99,7 @@ class DemoScreen extends StatelessWidget {
                         horizontal: 8.0, vertical: 15),
                     child: Text(
                       "Suggested..",
-                      style: TextStyle(color: model.isDark.isFalse ? Colors.black54 : Colors.white, fontSize: 15),
+                      style: TextStyle(color: !model.isDark.value ? Colors.black54 : Colors.white, fontSize: 15),
                     ),
                   ),
                   ListView(
@@ -112,7 +112,7 @@ class DemoScreen extends StatelessWidget {
                           onTap: () {
                             model.onCustomUrlClicked("https://www.google.com/","Google");
                           },
-                          trailing:  Icon(Icons.arrow_forward,color:  model.isDark.isFalse ? Colors.black : Colors.white,),
+                          trailing:  Icon(Icons.arrow_forward,color:  !model.isDark.value ? Colors.black : Colors.white,),
                           leading: Image.asset(
                             "assets/images/google.png",
                             height: 30,
@@ -122,7 +122,7 @@ class DemoScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20)),
                           tileColor:
                               Colors.greenAccent.shade100.withOpacity(.5),
-                          title:  Text("Google",style: TextStyle(color: model.isDark.isFalse ? Colors.black54 : Colors.white,)),
+                          title:  Text("Google",style: TextStyle(color: !model.isDark.value ? Colors.black54 : Colors.white,)),
                         ),
                       ),
                       Padding(
@@ -132,7 +132,7 @@ class DemoScreen extends StatelessWidget {
                             model
                                 .onCustomUrlClicked("https://www.youtube.com/","Youtube");
                           },
-                          trailing: Icon(Icons.arrow_forward,color:  model.isDark.isFalse ? Colors.black : Colors.white,),
+                          trailing: Icon(Icons.arrow_forward,color:  !model.isDark.value ? Colors.black : Colors.white,),
                           leading: Image.asset(
                             "assets/images/youtube.png",
                             height: 30,
@@ -141,7 +141,7 @@ class DemoScreen extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           tileColor: Colors.redAccent.shade100.withOpacity(.5),
-                          title: Text("Youtube",style: TextStyle(color: model.isDark.isFalse ? Colors.black54 : Colors.white,),),
+                          title: Text("Youtube",style: TextStyle(color: !model.isDark.value ? Colors.black54 : Colors.white,),),
                         ),
                       ),
                       Padding(
@@ -151,7 +151,7 @@ class DemoScreen extends StatelessWidget {
                             model.onCustomUrlClicked(
                                 "https://www.facebook.com/","Facebook");
                           },
-                          trailing: Icon(Icons.arrow_forward,color:  model.isDark.isFalse ? Colors.black : Colors.white,),
+                          trailing: Icon(Icons.arrow_forward,color:  !model.isDark.value ? Colors.black : Colors.white,),
                           leading: Image.asset(
                             "assets/images/facebook.png",
                             height: 30,
@@ -160,7 +160,7 @@ class DemoScreen extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           tileColor: Colors.blueAccent.shade100.withOpacity(.5),
-                          title: Text("Facebook",style: TextStyle(color: model.isDark.isFalse ? Colors.black54 : Colors.white,)),
+                          title: Text("Facebook",style: TextStyle(color: !model.isDark.value ? Colors.black54 : Colors.white,)),
                         ),
                       ),
                       Padding(
@@ -175,12 +175,12 @@ class DemoScreen extends StatelessWidget {
                             height: 30,
                             width: 30,
                           ),
-                          trailing: Icon(Icons.arrow_forward,color:  model.isDark.isFalse ? Colors.black : Colors.white,),
+                          trailing: Icon(Icons.arrow_forward,color:  !model.isDark.value ? Colors.black : Colors.white,),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           tileColor:
                               Colors.orangeAccent.shade100.withOpacity(.5),
-                          title: Text("Instagram",style: TextStyle(color: model.isDark.isFalse ? Colors.black54 : Colors.white,)),
+                          title: Text("Instagram",style: TextStyle(color: !model.isDark.value ? Colors.black54 : Colors.white,)),
                         ),
                       ),
                     ],

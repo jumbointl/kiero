@@ -8,6 +8,19 @@ const shoppingCartUrl = "https://kiero.com.py/carrito/";
 const loginUrl = "https://kiero.com.py/mi-cuenta/";
 const onSaleUrl = "https://kiero.com.py/tienda/?stock_status=onsale";
 
+const int PAGE_MAIN = 0;
+const int PAGE_ON_SALE = 1;
+const int PAGE_SHOPPING_CART = 2;
+const int PAGE_REQUEST_CREDIT = 3;
+const int PAGE_LOGIN = 4;
+const int PAGE_MORE_FROM_US = 5;
+const int PAGE_ABOUT_US = 6;
+const int PAGE_CONTACT_US = 7;
+const int PAGE_RATE_US = 8;
+const int PAGE_SETTING = 9;
+const int PAGE_CUSTOM = 10;
+
+
 //Change the app icon for both android and ios
 //Copy your image file to assets/icons/ for both android and ios
 //Run " flutter pub run flutter_launcher_icons:main " inside your terminal
@@ -15,6 +28,7 @@ const onSaleUrl = "https://kiero.com.py/tienda/?stock_status=onsale";
 const appIcon = "assets/icons/app_icon.png";
 const appIconDemo = "assets/icons/order_picker.png";
 const appIconDemo2 = "assets/icons/splash_screen.jpg";
+const customTransitionImage = "assets/icons/splash_screen.jpg";
 const splashScreenBackground = appIconDemo;
 //set appIconColor to 0 if app icon has default color in built
 int appIconColor = "#FFFFFF".getHexValue();

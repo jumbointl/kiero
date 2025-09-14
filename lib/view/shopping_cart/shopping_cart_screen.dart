@@ -2,30 +2,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
-import 'package:kiero/controller/customcontroller.dart';
+import 'package:kiero/utils/appconstant.dart';
 
-import '../../utils/appconstant.dart';
+import '../../controller/shopping_cart_controller.dart';
+import '../../utils/message.dart';
 import '../common/common_screen.dart';
 
-class CustomScreen extends CommonScreen {
-  late CustomController model;
+class ShoppingCartScreen extends CommonScreen {
+  late ShoppingCartController model;
 
-
-
-  CustomScreen({
-    super.url,
-    super.title,
-    }
-  );
+  ShoppingCartScreen(
+  ){
+    url = shoppingCartUrl ;
+    title = Message.SHOPPING_CART;
+  }
 
   @override
   void setControllerModel() {
-    model =  Get.put(CustomController());
+    model = Get.put(ShoppingCartController());
   }
 
   @override
   void setPageIndex() {
-    pageIndex = PAGE_CUSTOM;
+    pageIndex = PAGE_SHOPPING_CART;
   }
   @override
   void getDarkMode() {

@@ -9,7 +9,7 @@ class DemoController extends GetxController {
   var isDark = false.obs;
 
   void onCustomUrlClicked(String url,String title) {
-    Get.to(const CustomScreen(),
+    Get.to(CustomScreen(),
         arguments: {"customUrl": url,"title":title}, transition: Transition.rightToLeft);
   }
 
