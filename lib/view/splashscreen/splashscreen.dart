@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
     return Container(
       child: Scaffold(
         //backgroundColor: appThemeColor == 0 ? null : Color(appThemeColor),
-        backgroundColor: Colors.cyan[200],
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Center(
             child: Image(

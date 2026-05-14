@@ -5,6 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:kiero/controller/settingcontroller.dart';
 import 'package:kiero/utils/admob_service.dart';
 import 'package:kiero/utils/appconstant.dart';
+import 'package:kiero/widgets/safe_bottom_bar.dart';
 
 import '../../utils/message.dart';
 import '../common/common_screen.dart';
@@ -24,14 +25,16 @@ class SettingScreen extends CommonScreen {
           title: Text(Message.SETTING,style: TextStyle(color: !model.isDark.value ? Colors.black : Colors.white),),
           iconTheme: IconThemeData(color: !model.isDark.value ? Colors.black : Colors.white),
         ),
-        bottomNavigationBar: !enableBannerAds
-            ? const SizedBox.shrink()
-            : SizedBox(
-                height: 50.0,
-                width: double.maxFinite,
-                child: AdWidget(
-                    key: UniqueKey(), ad: AdMobService.createBannerAd()..load()),
-              ),
+        bottomNavigationBar: SafeBottomBar(
+          child: !enableBannerAds
+              ? const SizedBox.shrink()
+              : SizedBox(
+                  height: 50.0,
+                  width: double.maxFinite,
+                  child: AdWidget(
+                      key: UniqueKey(), ad: AdMobService.createBannerAd()..load()),
+                ),
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(

@@ -6,6 +6,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:kiero/widgets/safe_bottom_bar.dart';
 import 'package:focus_detector_v2/focus_detector_v2.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -85,27 +86,29 @@ abstract class CommonScreen extends StatelessWidget {
 
                 : null,
 
-            bottomNavigationBar: !enableBannerAds
-                ? Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (isLoading.value)
-                  const LinearProgressIndicator(
-                    color: Colors.green,
-                    backgroundColor: Colors.white,
-                    minHeight: 10, // Adjust height as needed
-                  ),
-                bottomNavigationBar(context),
-              ],
-            )
-                : Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                    height: 50.0,
-                    width: double.maxFinite,
-                    child: AdWidget(key: UniqueKey(), ad: AdMobService.createBannerAd()..load())),
-              ],),
+            bottomNavigationBar: SafeBottomBar(
+              child: !enableBannerAds
+                  ? Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (isLoading.value)
+                    const LinearProgressIndicator(
+                      color: Colors.green,
+                      backgroundColor: Colors.white,
+                      minHeight: 10, // Adjust height as needed
+                    ),
+                  bottomNavigationBar(context),
+                ],
+              )
+                  : Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                      height: 50.0,
+                      width: double.maxFinite,
+                      child: AdWidget(key: UniqueKey(), ad: AdMobService.createBannerAd()..load())),
+                ],),
+            ),
             body: SafeArea(
               child: InAppWebView(
                 pullToRefreshController: pullToRefreshController,

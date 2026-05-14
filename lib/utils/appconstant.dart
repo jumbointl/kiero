@@ -34,14 +34,14 @@ const splashScreenBackground = appIconDemo;
 int appIconColor = "#FFFFFF".getHexValue();
 //int appIconColor = 0;
 
-int appThemeColor = "#4169E1".getHexValue();
-
+//int appThemeColor = "#4169E1".getHexValue();
+int appThemeColor = "#FFFFFF".getHexValue();
 //home screen setting
 const homeScreenTitle = "www.kiero.com.py";
 
 //splash settings
 //change the "#152515" with the color you want
-int splashBackgroundColor = "#4169E1".getHexValue();
+int splashBackgroundColor = "#FFFFFF".getHexValue();
 int splashSecondaryColor = "#FFFFFF".getHexValue();
 int splashDuration = 2; //in seconds
 

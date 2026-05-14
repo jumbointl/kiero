@@ -5,6 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:kiero/controller/democontroller.dart';
 import 'package:kiero/utils/admob_service.dart';
 import 'package:kiero/utils/appconstant.dart';
+import 'package:kiero/widgets/safe_bottom_bar.dart';
 
 class DemoScreen extends StatelessWidget {
   const DemoScreen({super.key});
@@ -31,15 +32,17 @@ class DemoScreen extends StatelessWidget {
                 color:
                 !model.isDark.value ? Colors.black : Colors.white),
           ),
-          bottomNavigationBar: !enableBannerAds
-              ? const SizedBox.shrink()
-              : SizedBox(
-                  height: 50.0,
-                  width: double.maxFinite,
-                  child: AdWidget(
-                      key: UniqueKey(),
-                      ad: AdMobService.createBannerAd()..load()),
-                ),
+          bottomNavigationBar: SafeBottomBar(
+            child: !enableBannerAds
+                ? const SizedBox.shrink()
+                : SizedBox(
+                    height: 50.0,
+                    width: double.maxFinite,
+                    child: AdWidget(
+                        key: UniqueKey(),
+                        ad: AdMobService.createBannerAd()..load()),
+                  ),
+          ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(15),
